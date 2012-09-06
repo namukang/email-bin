@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Email Bin Sample</title>
+	<style type="text/css">
+	body {
+		width: 500px;
+		margin: 50px auto;
+	}
+	.email, .submit {
+		font-size: 1.2em;
+	}
+	.email {
+		padding: 5px 10px;
+	}
+	.submit {
+		padding: 7px 10px;
+	}
+	</style>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$('.email-form').submit(function() {
+			var url = $(this).attr('action');
+			var success = function() {
+				alert('Thanks for signing up!');
+				// Clear email field
+		        $('.email-form .email').val('');
+			};
+			var error = function() {
+				alert('Please enter a valid email.');
+			}
+			// Submit form via ajax
+			$.ajax({
+				type: 'POST',
+				url: url,
+				data: $(this).serialize(),
+				success: success,
+				error: error
+			});
+			return false;
+		});
+	});
+	</script>
+</head>
+<body>
+	<h2>Email Bin Demo</h2>
+	<form class="email-form" method="post" action="http://email-bin.herokuapp.com/signup">
+		<input class="email" name="email" type="text" placeholder="Email address">
+		<button class="submit" type="submit">Sign up</button>
+	</form>
+</body>
+</html>
