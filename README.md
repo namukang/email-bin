@@ -18,10 +18,17 @@ add-on.
 2. `heroku create`
 3. `heroku addons:add mongolab:starter`
 4. `git push heroku master`
-5. Once you have the server running on Heroku, you can simply create a
-   form with a text field and submit button anywhere* and set the
-   'action' attribute to HEROKU-APP-URL/signup. Look inside the example
-   directory for help.
+5. Once you have the server running on Heroku, you can simply create a form
+   with a text field and submit button anywhere* and set the 'action' attribute
+   to YOUR-HEROKU-APP-URL/signup. Look inside the example directory for help. In
+   other words, all you need is add the following snippet to your site:
+
+```html
+<form class="email-form" method="post" action="<YOUR-HEROKU-APP-URL>/signup">
+  <input class="email" name="email" type="text" placeholder="Email address">
+  <button class="submit" type="submit">Sign up</button>
+</form>
+```
 
 *Email Bin allows cross domain requests, so Email Bin does not need to
 reside on the same domain as your actual site. This means that
