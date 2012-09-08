@@ -23,7 +23,10 @@ add-on.
    to HEROKU-APP-URL/signup. Look inside the example directory for help.
 
 *Email Bin allows cross domain requests, so Email Bin does not need to
-reside on the same domain as your actual site.
+reside on the same domain as your actual site. This means that
+XMLHttpRequests can be invoked from any domain; if you would like to
+restrict the domains that are allowed to do this, change the
+`ALLOWED_DOMAINS` to the URL of the site containing your form.
 
 ## I want to develop locally.
 

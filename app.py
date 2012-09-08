@@ -11,11 +11,13 @@ from flask import Flask, request, Response
 from access_control import crossdomain
 
 EMAIL_REGEX = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}')
+# domains allowed to invoke the XMLHttpRequest API
+ALLOWED_DOMAINS = ['*']
 
 app = Flask(__name__)
 
 @app.route('/signup', methods=['POST'])
-@crossdomain(origin='*')
+@crossdomain(origin=ALLOWED_DOMAINS)
 def signup():
     email = request.form['email']
     if email and re.match(EMAIL_REGEX, email):
