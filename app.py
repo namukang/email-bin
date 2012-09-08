@@ -25,9 +25,9 @@ def signup():
                 'time': datetime.datetime.utcnow(),
                 }
         app.database.signups.insert(signup)
-        return Response(status=201)
+        return Response("Thanks for signing up!", status=201)
     else:
-        return Response(status=400)
+        return Response("Sorry, your email address is invalid.", status=400)
 
 def connect_to_db():
     """Connect to database"""
