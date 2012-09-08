@@ -18,15 +18,16 @@ add-on.
 2. `heroku create`
 3. `heroku addons:add mongolab:starter`
 4. `git push heroku master`
-5. Once you have the server working, you can simply create a form with a
-   text field and submit button anywhere* and set the 'action' attribute
-   to HEROKU-APP-URL/signup. Look inside the example directory for help.
+5. Once you have the server running on Heroku, you can simply create a
+   form with a text field and submit button anywhere* and set the
+   'action' attribute to HEROKU-APP-URL/signup. Look inside the example
+   directory for help.
 
 *Email Bin allows cross domain requests, so Email Bin does not need to
 reside on the same domain as your actual site. This means that
 XMLHttpRequests can be invoked from any domain; if you would like to
 restrict the domains that are allowed to do this, change the
-`ALLOWED_DOMAINS` to the URL of the site containing your form.
+`ALLOWED_DOMAINS` in app.py to the URL of the site containing your form.
 
 ## I want to develop locally.
 
