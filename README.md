@@ -15,10 +15,11 @@ add-on.
 ## How do I use it?
 
 1. `git clone https://github.com/dskang/email-bin.git`
-2. `heroku create`
-3. `heroku addons:add mongolab:starter`
-4. `git push heroku master`
-5. Once you have the server running on Heroku, you can simply create a form
+2. `cd email-bin`
+3. `heroku apps:create`
+4. `heroku addons:add mongolab`
+5. `git push heroku master`
+6. Once you have the server running on Heroku, you can simply create a form
    with a text field and submit button anywhere* and set the 'action' attribute
    to YOUR-HEROKU-APP-URL/signup. Look inside the example directory for help. In
    other words, all you need is add the following snippet to your site:
